@@ -3,7 +3,6 @@
 \header {
   title = "Entrée de Polymnie"
   subtitle = "Transcription for Piano"
-  instrument = "Piano"
   composer = "Jean Philippe Rameau"
 }
 
@@ -22,9 +21,9 @@ rightOne = \relative c'' {
 
 rightTwo = \relative c'' {
   \global
-  r2 d2
-  r1
-  r2 b
+  \skip2 d2
+  \skip1
+  \skip2 b
 }
 
 leftOne = \relative c' {
@@ -44,7 +43,6 @@ leftTwo = \relative c, {
 
 \score {
   \new PianoStaff \with {
-    instrumentName = "Piano"
     fontSize = #-0.6
   } <<
     \new Staff = "right" << \rightOne \\ \rightTwo >>
