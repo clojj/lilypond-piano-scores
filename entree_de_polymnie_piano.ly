@@ -21,9 +21,10 @@ rightOne = \relative c'' {
 
 rightTwo = \relative c'' {
   \global
-  \skip2 d2
-  \skip1
-  \skip2 b
+  \skip2 d2(
+  d4) \skip2.
+  \skip2 (b2
+  b4)
 }
 
 leftOne = \relative c' {
