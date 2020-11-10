@@ -13,17 +13,17 @@ global = {
 
 rightOne = \relative c'' {
   \global
-  r2 d'4.( d8~ 
-  d4) cis8 b a g fis e
-  d2 b'4.( b8~
+  r2 d'4.( d8~ 		| % measure 1
+  d4) cis8 b a g fis e	| % measure 2
+  d2 b'4.( b8~		| % measure 3
   b4)
 }
 
 rightTwo = \relative c'' {
   \global
-  \skip2 d2(
-  d4) \skip2.
-  \skip2 (b2
+  \skip2 d2(		| % measure 1
+  d4) \skip2.		| % measure 2
+  \skip2 b2(		| % measure 3
   b4)
 }
 
@@ -39,12 +39,12 @@ leftTwo = \relative c, {
   \global
   <d d' fis>1 \arpeggio \sustainOn
   a'2. \sustainOn g'4
-  <b, fis'>1 \sustainOn
+  <b, fis'>1 \sustainOn % TODO lower Y
 }
 
 \score {
   \new PianoStaff \with {
-    fontSize = #-0.6
+    fontSize = #-1
   } <<
     \new Staff = "right" << \rightOne \\ \rightTwo >>
     \new Staff = "left" { \clef bass << \leftOne \\ \leftTwo >> }
