@@ -32,14 +32,32 @@ leftOne = \relative c' {
   r4 d8 cis8 b8 a8 g8 fis8
   e2 cis'2(
   cis4) b8 a g fis e d
-  cis2
+  cis2 a'2(
+  a4) g8 fis e d cis b
+  \break a2
 }
 
-leftTwo = \relative c, {
+leftTwo = \relative c {
+  \global
+  \skip1
+  \skip2.
+  g'4
+  % \slurNeutral
+  \shape #'((0 . 0) (0 . -0.5) (0 . -0.7) (0 . 0)) Tie
+  fis1~
+  \shape #'((0.4 . 0.2) (0 . -0.5) (0 . -0.7) (0 . 0)) Tie
+  fis~
+  fis2 e2(
+  e2)
+}
+
+leftThree = \relative c, {
   \global
   <d d' fis>1 \arpeggio \sustainOn
-  a'2. \sustainOn g'4
-  <b, fis'>1 \sustainOn % TODO lower Y
+  a'1 \sustainOn
+  b1 \sustainOn % TODO lower Y
+  fis
+  g
 }
 
 \score {
@@ -47,7 +65,7 @@ leftTwo = \relative c, {
     fontSize = #-1
   } <<
     \new Staff = "right" << \rightOne \\ \rightTwo >>
-    \new Staff = "left" { \clef bass << \leftOne \\ \leftTwo >> }
+    \new Staff = "left" { \clef bass << \leftOne \\ \leftTwo \leftThree >> }
   >>
   \layout { }
 }
