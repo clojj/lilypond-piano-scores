@@ -13,27 +13,27 @@ global = {
 
 rightOne = \relative c'' {
   \global
-  r2 d'4.( d8~ 		| % measure 1
-  d4) cis8 b a g fis e	| % measure 2
-  d2 b'4.( b8~		| % measure 3
-  b4)
+  r2 d'4.~ d8~ 		| % measure 1
+  d4 cis8 b a g fis e	| % measure 2
+  d2 b'4.~ b8~		| % measure 3
+  b4
 }
 
 rightTwo = \relative c'' {
   \global
-  \skip2 d2(		| % measure 1
-  d4) \skip2.		| % measure 2
-  \skip2 b2(		| % measure 3
-  b4)
+  \skip2 d2~		| % measure 1
+  d4 \skip2.		| % measure 2
+  \skip2 b2~		| % measure 3
+  b4
 }
 
 leftOne = \relative c' {
   \global
   r4 d8 cis8 b8 a8 g8 fis8
-  e2 cis'2(
-  cis4) b8 a g fis e d
-  cis2 a'2(
-  a4) g8 fis e d cis b
+  e2 cis'2~
+  cis4 b8 a g fis e d
+  cis2 a'2~
+  a4 g8 fis e d cis b
   \break a2
 }
 
@@ -42,13 +42,12 @@ leftTwo = \relative c {
   \skip1
   \skip2.
   g'4
-  % \slurNeutral
   \shape #'((0 . 0) (0 . -0.5) (0 . -0.7) (0 . 0)) Tie
   fis1~
   \shape #'((0.4 . 0.2) (0 . -0.5) (0 . -0.7) (0 . 0)) Tie
   fis~
-  fis2 e2(
-  e2)
+  fis2 \shape #'((0 . 0) (0 . -1.0) (0 . -1.0) (0 . 0)) Tie e2~
+  e2
 }
 
 leftThree = \relative c, {
