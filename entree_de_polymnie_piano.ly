@@ -26,14 +26,16 @@ rightTwo = \relative c'' {
   \skip2 b2~		| % measure 3
   b4
 }
-
+ 
+ % -----------------------------------------------------------------
+ 
 leftOne = \relative c' {
   \global
-  r4 d8 cis8 b8 a8 g8 fis8
-  e2 cis'2~
-  cis4 b8 a g fis e d
-  cis2 a'2~
-  a4 g8 fis e d cis b
+  r4 d8 cis8 b8 a8 g8 fis8 	| % measure 1
+  e2 cis'2~			| % measure 2
+  cis4 b8 a g fis e d		| % measure 3
+  cis2 a'2~			| % measure 4
+  a4 g8 fis e d cis b		| % measure 5
   \break a2
 }
 
@@ -45,14 +47,14 @@ leftTwo = \relative c {
   \shape #'((0 . 0) (0 . -0.5) (0 . -0.7) (0 . 0)) Tie
   fis1~
   \shape #'((0.4 . 0.2) (0 . -0.5) (0 . -0.7) (0 . 0)) Tie
-  fis~
-  fis2 \shape #'((0 . 0) (0 . -1.0) (0 . -1.0) (0 . 0)) Tie e2~
+  fis
+  d2 \shape #'((0 . 0) (0 . -1.0) (0 . -1.0) (0 . 0)) Tie e2~
   e2
 }
 
 leftThree = \relative c, {
   \global
-  <d d' fis>1 \arpeggio \sustainOn
+  <d d' fis>1 \arpeggio \tweak X-offset #-4.0 \sustainOn
   a'1 \sustainOn
   b1 \sustainOn % TODO lower Y
   fis
